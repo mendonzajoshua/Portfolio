@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Section</title>
+    <link rel="stylesheet" href="resume_nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js"></script>
+    <style>
+    
+            
+
+        
+
+        .progress-bar {
+            background-color: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 10px;
+            margin: 10px 0;
+        }
+
+        .progress-bar-inner {
+            background-color: #4CAF50;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        .progress-html { width: 80%; }
+        .progress-css { width: 60%; }
+        .progress-js { width: 45%; }
+        .progress-java { width: 80%; }
+        .progress-dbms { width: 75%; }
+        .progress-python {width: 70%;}
+        .progress-german {width: 60%;}
+        .progress-french {width: 80%;}
+        .progress-advertising {width: 45%;}
+        
+        @media (max-width: 768px) {
+            .skill-card {
+                width: calc(50% - 20px); /* 2 columns on medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skill-card {
+                width: 80%; /* 1 column on small screens */
+                
+            }
+            .skills-container{
+                justify-content: center;
+                margin-left: 10px;
+                margin-right: 10px;
+
+            }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" id="navbar" style="position: fixed;display:block">
+        <a href="RESUME.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Academic.html">Academics</a>
+        <a href="Skills.html" class="active">Skills</a>
+        <a href="Project.html">Projects</a>
+        <a class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <div class="skills-container">
+        
+
+        <div class="skill-card">
+            <i class="fab fa-html5 skill-icon" style="color: #FF6600;"></i>
+            <div class="skill-title">HTML5</div>
+            <p>Building the structure of web pages</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-html"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-css3-alt skill-icon" style="color: #4379F2;"></i>
+            <div class="skill-title">CSS3</div>
+            <p>Styling web pages</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-css"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-js-square skill-icon" style="color: #FFEB00;"></i>
+            <div class="skill-title">JavaScript</div>
+            <p>Adding interactivity</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-js"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-java skill-icon" style="color: #FF4C4C;"></i>
+            <div class="skill-title">Java</div>
+            <p>Object-oriented programming</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-java"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fa-solid fa-database skill-icon"></i>
+            <div class="skill-title">DBMS</div>
+            <p>Database Management Systems</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-dbms"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-python skill-icon" style="color: #306998;"></i>
+            <div class="skill-title">Python</div>
+            <p>General-purpose programming</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-python"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-language skill-icon" style="color: #1A5319;"></i>
+            <div class="skill-title">German</div>
+            <p>Basic communication skills</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-german"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-language skill-icon" style="color: #DCA47C;"></i>
+            <div class="skill-title">French</div>
+            <p>Beginner level communication</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-french"></div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-bullhorn skill-icon" style="color: #FF4500;"></i>
+            <div class="skill-title">Advertising</div>
+            <p>BMM minor in strategic communication</p>
+            <div class="progress-bar">
+                <div class="progress-bar-inner progress-advertising"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

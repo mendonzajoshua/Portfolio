@@ -1,0 +1,236 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        small {
+            display: none;
+            color: red;
+            margin-top: 5px;
+        }
+
+        form {
+            margin: 0 auto;
+            margin-top: 10 px;
+            width: 30%;
+            height: 50%;
+            padding: 35px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            background-color:#F4A460;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid black;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            background-color: #FEFAE0;
+            font-family: Times new roman, sans-serif;
+
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #616a6b;
+            color: white;
+
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Contact</h1>
+
+    <form method="post" action="welcome.php">
+        <div class="container mb-2">
+            <div class="col-sm">
+                <i class="fa fa-user"></i>
+                <label for="txtName">UserName</label>
+                <br><input type="text" id="txtName" name="u_name">
+                <small id="u_error">Please enter a valid username (at least 5 characters long)</small>
+            </div>
+            <div class="col-sm">
+                <i class="fa fa-envelope"></i>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="u_email">
+                <small id="emailError">Please enter a valid email address</small>
+            </div>
+            <div class="col-sm">
+                <i class="fa fa-comments"></i>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="u_msg"></textarea>
+                <small></small>
+            </div>
+            
+        </div>
+        <div class="container mb-2">
+            <button type="submit" onsubmit="return validateField()">SUBMIT</button>
+        </div>
+
+    </form>
+
+    
+</body>
+<script src="resume_form_validation.js"></script>
+
+
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        small {
+            display: none; /* Initially hidden */
+            color: red;
+            margin-top: 5px;
+        }
+
+        form {
+            margin: 0 auto;
+            margin-top: 10px;
+            width: 30%;
+            padding: 35px;
+            border-radius: 5px;
+            background-color: #E0E5B6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #F4A460;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            background-color: #FBF9F1;
+            font-family: 'Times New Roman', sans-serif;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #616a6b;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .col-sm {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+    </style>
+    <!--<script src="resume_form_validation.js"></script>-->
+
+</head>
+
+<body>
+
+    <h1>Contact</h1>
+
+    <form id="myForm" method="post" action="welcome.php">
+        <div class="container mb-2">
+            <!-- Username Field -->
+            <div class="col-sm">
+                <i class="fa fa-user"></i>
+                <label for="txtName">UserName</label><br>
+                <input type="text" id="txtName" name="u_name" placeholder="Enter your username">
+                <small id="u_error">Please enter a valid username (at least 5 characters long)</small>
+            </div>
+            <!-- Email Field -->
+            <div class="col-sm">
+                <i class="fa fa-envelope"></i>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="u_email" placeholder="Enter your email">
+                <small id="emailError">Please enter a valid email address</small>
+            </div>
+            <!-- Message Field -->
+            <div class="col-sm">
+                <i class="fa fa-comments"></i>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="u_msg" rows="4" placeholder="Your message here..."></textarea>
+                <small></small>
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="container mb-2">
+            <button type="submit">SUBMIT</button>
+        </div>
+    </form>
+
+
+
+</body>
+<script>
+    function validateField(event) {
+    var is_valid = true;
+
+    // Validate Username
+    var userName = document.getElementById('txtName');
+    var userNameError = document.getElementById('u_error');
+    if (userName.value.length < 5) {
+        userNameError.style.display = "block"; // Show error
+        is_valid = false; // Validation failed
+    } else {
+        userNameError.style.display = "none"; // Hide error
+    }
+
+    // Validate Email
+    var email = document.getElementById('email');
+    var emailError = document.getElementById('emailError');
+    var emailPattern = /^[a-z]+[a-z0-9._-]*@[a-z]+\.[a-z]{2,}$/; 
+    if (!emailPattern.test(email.value)) {
+        emailError.style.display = "block"; // Show error
+        is_valid = false; // Validation failed
+    } else {
+        emailError.style.display = "none"; // Hide error
+    }
+
+    // Prevent form submission if any validation fails
+    if (!is_valid) {
+        event.preventDefault(); // Prevent form submission if invalid
+    }
+}
+
+// Attach the validateField function to the form's onsubmit event
+document.getElementById('myForm').addEventListener('submit', validateField);
+
+</script>
+
+</html>

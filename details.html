@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        form {
+            margin: 0 auto;
+            width: 30%;
+            padding: 35px;
+            border: 2px solid;
+            border-radius: 5px;
+            background-color: yellow;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="submit.php" method="post">
+        <h1>--EMPLOYEE DETAILS--</h1>
+
+        <label for="ssn">SSN:</label><br>
+        <input type="text" id="ssn" name="ssn" required><br><br>
+
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" required><br><br>
+
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname" required><br><br>
+
+        <label for="dependent">No Of Dependents:</label><br>
+        <input type="number" id="dependent" name="dependent" required><br><br>
+
+        <label for="dept_name">Department Name:</label><br>
+        <input type="text" id="dept_name" name="dept_name" required><br><br>
+
+        <label for="post">POST:</label><br>
+        <input type="text" id="post" name="post" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
