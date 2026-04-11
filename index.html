@@ -1,152 +1,941 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="resume_nav.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="script.js"></script>
-    <style>
-        /*.greeting {
-            /*background-color: #F4A460;
-            padding: 50px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }*/
-        .greeting {
-            background: linear-gradient(#F4A460, #FFD4A3);
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Mendonza — Folio.jm</title>
+  <meta name="description" content="Joshua Mendonza — IT Graduate, Functional Analyst, and Multidisciplinary Learner from Mumbai. Portfolio showcasing projects, internship experience, and technical skills." />
+  <meta property="og:title" content="Joshua Mendonza — Folio.jm" />
+  <meta property="og:description" content="IT Graduate · Functional Analyst · Multidisciplinary Learner" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mendonzajoshua.github.io/folio-jm" />
 
-
-        .greeting h1 {
-            font-size: 40px;
-            color: #ffffff;
-            margin-bottom: 10px;
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cream: '#faf8f3',
+            ink: '#1c1c1e',
+            accent: '#c8622a',
+            'accent-light': '#e8845a',
+            muted: '#6b6b6b',
+            border: '#e2ddd6',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['"DM Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
         }
+      }
+    }
+  </script>
 
-        .greeting p {
-            font-size: 20px;
-            color: #000000;
-            margin-top: 20px;
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-        hr {
-            border: 1px solid black;
-            width: 80%;
-            margin: 20px auto;
-        }
+  <!-- Font Awesome -->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLzsA==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+crossorigin="anonymous"
+referrerpolicy="no-referrer" />
 
-        .contact-section {
-            text-align: center;
-            margin:40px 40px 40px 40px;
-            padding: 20px;
-            /* Added padding for better spacing */
-            background: linear-gradient(#F4A460, #FFD4A3);
-            color: #333;
-            /* Background to make the section stand out */
-            border-radius: 10px;
-            /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Subtle shadow for depth */
-        }
-
-        .contact-section h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-            color: #ffffff;
-            /* White color for better contrast */
-        }
-
-        .contact-section p {
-            font-size: 18px;
-            color: #333;
-            /* Text color for readability */
-            margin-bottom: 20px;
-        }
-
-        .contact-section a {
-            display: inline-block;
-            padding: 12px 25px;
-            /* Adjusted padding */
-            background-color: #0077B5;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            /* More rounded corners */
-            font-size: 20px;
-            transition: background-color 0.3s, transform 0.2s;
-            /* Added transform for interaction */
-        }
-
-        .contact-section a:hover {
-            background-color: #005582;
-            transform: translateY(-3px);
-            /* Small lift effect on hover */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            /* Enhanced shadow */
-        }
-    </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="bg-cream text-ink font-body antialiased">
 
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="About.html">About</a>
-        <a href="Academic.html">Academics</a>
-        <a href="Skills.html">Skills</a>
-        <a href="Project.html">Projects</a>
-        <a class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+
+      <a href="#hero" class="font-display text-xl font-bold tracking-tight text-accent">
+        folio<span class="text-ink dark:text-cream">.jm</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden md:flex items-center gap-1 text-sm font-medium">
+        <li><a href="#about" class="nav-link px-3 py-1.5 rounded-full hover:bg-accent/10 hover:text-accent transition-all">About</a></li>
+        <li><a href="#skills" class="nav-link px-3 py-1.5 rounded-full hover:bg-accent/10 hover:text-accent transition-all">Skills</a></li>
+        <li><a href="#education" class="nav-link px-3 py-1.5 rounded-full hover:bg-accent/10 hover:text-accent transition-all">Education</a></li>
+        <li><a href="#experience" class="nav-link px-3 py-1.5 rounded-full hover:bg-accent/10 hover:text-accent transition-all">Experience</a></li>
+        <li><a href="#projects" class="nav-link px-3 py-1.5 rounded-full hover:bg-accent/10 hover:text-accent transition-all">Projects</a></li>
+        <li><a href="#contact" class="nav-link px-3 py-1.5 rounded-full hover:bg-accent/10 hover:text-accent transition-all">Contact</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme toggle -->
+        <button id="themeToggle" aria-label="Toggle dark mode"
+          class="w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-accent hover:text-accent transition-all text-sm">
+          <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+        <!-- Hire me -->
+        <a href="#contact"
+          class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-light transition-all">
+          Hire Me <i class="fas fa-arrow-right text-xs"></i>
         </a>
-    </nav>
+        <!-- Mobile hamburger -->
+        <button id="menuToggle" class="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-border" aria-label="Menu">
+          <i class="fas fa-bars text-sm"></i>
+        </button>
+      </div>
+    </div>
 
-    <!-- Home Page Content -->
-    <div class="home-container">
-        <img src="Joshua_suit_2.jpeg" alt="Joshua's Image">
-        <h1 style="font-family:'Times New Roman', Times, serif;">Joshua Mendonza</h1>
-        <div class="greeting">
-            <h1>Welcome to My Space!</h1>
-            <p style="font-weight: 700;text-align: center;">Hi there! I'm Joshua Mendonza. Dive in to explore my work,
-                passions and projects. I'm excited to have you here!<br><br>
-                IT Student with a passion for learning and growth.</p>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-border bg-cream dark:bg-ink px-6 py-4 space-y-1">
+      <a href="#about" class="mobile-link block px-3 py-2 rounded-lg hover:bg-accent/10 hover:text-accent text-sm transition-all">About</a>
+      <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg hover:bg-accent/10 hover:text-accent text-sm transition-all">Skills</a>
+      <a href="#education" class="mobile-link block px-3 py-2 rounded-lg hover:bg-accent/10 hover:text-accent text-sm transition-all">Education</a>
+      <a href="#experience" class="mobile-link block px-3 py-2 rounded-lg hover:bg-accent/10 hover:text-accent text-sm transition-all">Experience</a>
+      <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg hover:bg-accent/10 hover:text-accent text-sm transition-all">Projects</a>
+      <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg hover:bg-accent/10 hover:text-accent text-sm transition-all">Contact</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero" class="min-h-screen flex items-center pt-20 pb-16 px-6">
+    <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Text side -->
+      <div class="order-2 lg:order-1 reveal">
+        <p class="font-mono text-accent text-sm tracking-widest uppercase mb-4">Hello, I'm</p>
+
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
+          Joshua<br />
+          <span class="text-accent">Mendonza</span>
+        </h1>
+
+        <div class="flex items-center gap-3 mb-6">
+          <div class="h-px w-8 bg-accent"></div>
+          <p id="typewriter" class="font-mono text-sm text-muted"></p>
         </div>
+
+        <p class="text-muted text-base leading-relaxed max-w-md mb-8">
+          Final-year IT student with a minor in Mass Media. I bridge the gap between technical logic and business requirements, building real products and not just writing code.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="#projects"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-full hover:bg-accent-light transition-all hover:-translate-y-0.5 shadow-sm">
+            View My Work <i class="fas fa-arrow-down text-xs"></i>
+          </a>
+          <a href="assets/Joshua_Mendonza_CV.pdf" download
+            class="inline-flex items-center gap-2 px-6 py-3 border border-border text-ink dark:text-cream font-medium rounded-full hover:border-accent hover:text-accent transition-all hover:-translate-y-0.5">
+            Download CV <i class="fas fa-download text-xs"></i>
+          </a>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="flex gap-8">
+          <div>
+            <p class="font-display text-2xl font-bold text-accent">8.10</p>
+            <p class="text-xs text-muted uppercase tracking-wide">CGPA</p>
+          </div>
+          <div class="w-px bg-border"></div>
+          <div>
+            <p class="font-display text-2xl font-bold text-accent">5+</p>
+            <p class="text-xs text-muted uppercase tracking-wide">Languages</p>
+          </div>
+          <div class="w-px bg-border"></div>
+          <div>
+            <p class="font-display text-2xl font-bold text-accent">4+</p>
+            <p class="text-xs text-muted uppercase tracking-wide">Projects</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo side -->
+      <div class="order-1 lg:order-2 flex justify-center lg:justify-end reveal">
+        <div class="relative">
+          <!-- Decorative ring -->
+          <div class="absolute inset-0 rounded-3xl border-2 border-accent/30 rotate-3 scale-105"></div>
+          <div class="absolute inset-0 rounded-3xl border border-accent/15 -rotate-2 scale-110"></div>
+
+          <!-- Photo frame -->
+          <div class="relative w-72 h-80 md:w-80 md:h-96 rounded-3xl overflow-hidden border-2 border-border bg-border">
+            <img src="assets/images/joshua.jpeg" alt="Joshua Mendonza"
+              class="w-full h-full object-cover" />
+            <!-- Fallback if no image -->
+            <div class="absolute inset-0 flex items-center justify-center bg-accent/5 text-accent text-6xl font-display font-bold opacity-0 no-image-fallback">JM</div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="absolute -bottom-4 -left-6 bg-white dark:bg-ink border border-border rounded-2xl px-3 py-2 shadow-sm float-badge">
+            <p class="font-mono text-xs text-accent font-medium">Flutter + Flask</p>
+            <p class="text-xs text-muted">Tofu Digital</p>
+          </div>
+          <div class="absolute -top-4 -right-4 bg-white dark:bg-ink border border-border rounded-2xl px-3 py-2 shadow-sm float-badge" style="animation-delay: 1s;">
+            <p class="font-mono text-xs text-accent font-medium">IoT · ESP-32</p>
+            <p class="text-xs text-muted">WayPal</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <hr>
-
-    <div class="contact-section">
-        <h2>Contact</h2>
-        <p class="info">Have any questions or want to get in touch?</p>
-        <a href="resume_form.html">Contact Me</a>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted">
+      <span class="text-xs font-mono tracking-widest uppercase">Scroll</span>
+      <div class="w-px h-8 bg-accent/40 scroll-line"></div>
     </div>
+  </section>
 
 
-    <div class="social-links">
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about" class="py-24 px-6 bg-white dark:bg-ink/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
 
-        <a href="https://www.instagram.com/mendonza_joshua?igsh=aWRxZ283ZnFwOXJh" target="_blank" style="color: #C13584;">
-            <i class="fab fa-instagram"></i>
-        </a>
+        <!-- Left: text -->
+        <div class="reveal">
+          <p class="font-mono text-accent text-xs tracking-widest uppercase mb-3">01 — About</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mb-8 leading-tight">
+            More than<br /><em class="text-accent">just a developer</em>
+          </h2>
 
-        <a href="mailto:joshuamendonza@xaviers.edu.in" style="color: #333;">
-            <i class="fas fa-envelope"></i>
-        </a>
+          <div class="space-y-4 text-muted leading-relaxed">
+            <p>
+              I'm Joshua, a final-year B.Sc. IT student at St. Xavier's College, Mumbai. With a minor in Mass Media (BMM) that I believe makes me genuinely different. I don't just build things, I think about why they should be built and who they're built for.
+            </p>
+            <p>
+              My internship at Tofu Digital taught me what a real development environment feels like deadlines, code reviews, database design decisions, and the satisfaction of shipping something that actual users will interact with. That experience changed how I approach every project.
+            </p>
+            <p>
+              Outside of screens, I follow a disciplined fitness routine, practice digital minimalism, and am currently learning how to effectively integrate AI tools into my workflow, because I believe the best developers in 2026 are the ones who know how to use AI as a multiplier.
+            </p>
+          </div>
 
-        <a href="Linkedin.com/in/mendonzajoshua" target="_blank" style="color: #0077B5;">
-            <i class="fab fa-linkedin"></i>
+          <!-- Fun facts row -->
+          <div class="grid grid-cols-3 gap-4 mt-10">
+            <div class="text-center p-4 rounded-2xl border border-border hover:border-accent/40 transition-all group">
+              <i class="fas fa-person-biking text-2xl text-accent/60 group-hover:text-accent transition-all mb-2"></i>
+              <p class="text-xs text-muted">Cyclist</p>
+            </div>
+            <div class="text-center p-4 rounded-2xl border border-border hover:border-accent/40 transition-all group">
+              <i class="fas fa-dumbbell text-2xl text-accent/60 group-hover:text-accent transition-all mb-2"></i>
+              <p class="text-xs text-muted">Fitness Enthusiast</p>
+            </div>
+            <div class="text-center p-4 rounded-2xl border border-border hover:border-accent/40 transition-all group">
+              <i class="fas fa-mountain text-2xl text-accent/60 group-hover:text-accent transition-all mb-2"></i>
+              <p class="text-xs text-muted">Adventurer</p>
+            </div>
+          </div>
+        </div>
 
-        </a>
-        <a href="https://github.com/mendonzajoshua" target="_blank" style="color: #000000;">
-            <i class="fab fa-github"></i>
-        </a>
+        <!-- Right: detail card -->
+        <div class="reveal space-y-4">
+          <!-- Info card -->
+          <div class="rounded-3xl border border-border p-8 bg-cream dark:bg-ink space-y-5">
+            <h3 class="font-display text-lg font-semibold">Quick Profile</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between items-center py-2 border-b border-border">
+                <span class="text-muted">Name</span>
+                <span class="font-medium">Joshua Elvis Mendonza</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-border">
+                <span class="text-muted">Location</span>
+                <span class="font-medium">Mumbai</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-border">
+                <span class="text-muted">Degree</span>
+                <span class="font-medium">B.Sc. IT + BMM Minor</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-border">
+                <span class="text-muted">CGPA</span>
+                <span class="font-medium text-accent">8.10 / 10</span>
+              </div>
+              <div class="flex justify-between items-center py-2 border-b border-border">
+                <span class="text-muted">Graduation</span>
+                <span class="font-medium">2026</span>
+              </div>
+              <div class="flex justify-between items-center py-2">
+                <span class="text-muted">Status</span>
+                <span class="inline-flex items-center gap-1.5 text-green-600 font-medium">
+                  <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  Open to opportunities
+                </span>
+              </div>
+            </div>
+          </div>
 
+          <!-- AI philosophy card -->
+          <div class="rounded-3xl border border-accent/30 bg-accent/5 p-6">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-accent/15 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-robot text-accent text-sm"></i>
+              </div>
+              <div>
+                <p class="font-medium text-sm mb-1">AI-Augmented Workflow</p>
+                <p class="text-xs text-muted leading-relaxed">I actively use Claude, ChatGPT, and Gemini as productivity multipliers — from prompt engineering to AI-assisted code review. This portfolio itself was planned and built with AI collaboration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
+
+  <!-- ============================================================
+       SKILLS
+  ============================================================ -->
+  <section id="skills" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="font-mono text-accent text-xs tracking-widest uppercase mb-3">02 — Skills</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+          Tools of the<br /><em class="text-accent">trade</em>
+        </h2>
+      </div>
+
+      <div class="space-y-14">
+
+        <!-- Technical skills with bars -->
+        <div class="reveal">
+          <h3 class="font-mono text-xs tracking-widest mb-6" style="color:#6b6b6b; text-transform:uppercase;">Technical</h3>
+          <div class="grid md:grid-cols-2 gap-x-16 gap-y-6">
+
+            <div class="skill-item">
+              <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium flex items-center gap-2">
+                  <i class="fab fa-python" style="color:#3572A5;"></i> Python
+                </span>
+                <span class="text-xs font-mono" style="color:#6b6b6b;">70%</span>
+              </div>
+              <div class="rounded-full overflow-hidden" style="height:6px; background:#e2ddd6;">
+                <div class="skill-bar rounded-full" style="height:100%; background:#c8622a; width:0%;" data-width="70"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium flex items-center gap-2">
+                  <i class="fab fa-java" style="color:#b07219;"></i> Java
+                </span>
+                <span class="text-xs font-mono" style="color:#6b6b6b;">75%</span>
+              </div>
+              <div class="rounded-full overflow-hidden" style="height:6px; background:#e2ddd6;">
+                <div class="skill-bar rounded-full" style="height:100%; background:#c8622a; width:0%;" data-width="75"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium flex items-center gap-2">
+                  <i class="fab fa-html5" style="color:#e34c26;"></i> HTML / CSS / JS
+                </span>
+                <span class="text-xs font-mono" style="color:#6b6b6b;">80%</span>
+              </div>
+              <div class="rounded-full overflow-hidden" style="height:6px; background:#e2ddd6;">
+                <div class="skill-bar rounded-full" style="height:100%; background:#c8622a; width:0%;" data-width="80"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium flex items-center gap-2">
+                  <i class="fas fa-mobile-screen-button" style="color:#00B4AB;"></i> Flutter / Dart
+                </span>
+                <span class="text-xs font-mono" style="color:#6b6b6b;">60%</span>
+              </div>
+              <div class="rounded-full overflow-hidden" style="height:6px; background:#e2ddd6;">
+                <div class="skill-bar rounded-full" style="height:100%; background:#c8622a; width:0%;" data-width="60"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium flex items-center gap-2">
+                  <i class="fas fa-database" style="color:#336791;"></i> SQL / PostgreSQL
+                </span>
+                <span class="text-xs font-mono" style="color:#6b6b6b;">72%</span>
+              </div>
+              <div class="rounded-full overflow-hidden" style="height:6px; background:#e2ddd6;">
+                <div class="skill-bar rounded-full" style="height:100%; background:#c8622a; width:0%;" data-width="72"></div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="flex justify-between mb-2">
+                <span class="text-sm font-medium flex items-center gap-2">
+                  <i class="fas fa-microchip" style="color:#9333ea;"></i> Arduino C++
+                </span>
+                <span class="text-xs font-mono" style="color:#6b6b6b;">50%</span>
+              </div>
+              <div class="rounded-full overflow-hidden" style="height:6px; background:#e2ddd6;">
+                <div class="skill-bar rounded-full" style="height:100%; background:#c8622a; width:0%;" data-width="50"></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tools & Frameworks as tags -->
+        <div class="reveal">
+          <h3 class="font-mono text-xs tracking-widest mb-6" style="color:#6b6b6b; text-transform:uppercase;">Frameworks & Tools</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag"><i class="fas fa-flask-vial" style="font-size:12px; margin-right:5px;"></i>Flask</span>
+            <span class="skill-tag"><i class="fas fa-leaf" style="font-size:12px; margin-right:5px; color:#47A248;"></i>MongoDB</span>
+            <span class="skill-tag"><i class="fas fa-fire" style="font-size:12px; margin-right:5px; color:#FFCA28;"></i>Firebase</span>
+            <span class="skill-tag"><i class="fab fa-github" style="font-size:12px; margin-right:5px;"></i>Git / GitHub</span>
+            <span class="skill-tag"><i class="fab fa-google" style="font-size:12px; margin-right:5px; color:#4285F4;"></i>Google Colab</span>
+            <span class="skill-tag"><i class="fas fa-cube" style="font-size:12px; margin-right:5px;"></i>TinkerCad</span>
+            <span class="skill-tag"><i class="fas fa-pen-nib" style="font-size:12px; margin-right:5px;"></i>Affinity Suite</span>
+            <span class="skill-tag"><i class="fas fa-palette" style="font-size:12px; margin-right:5px;"></i>Canva</span>
+            <span class="skill-tag"><i class="fab fa-bootstrap" style="font-size:12px; margin-right:5px; color:#7952B3;"></i>Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- AI & Automation — condensed single row -->
+        <div class="reveal">
+          <h3 class="font-mono text-xs tracking-widest mb-6" style="color:#6b6b6b; text-transform:uppercase;">AI & Automation Workflow</h3>
+          <div style="background:rgba(200,98,42,0.04); border:1px solid rgba(200,98,42,0.2); border-radius:16px; padding:20px;">
+            <p class="text-sm mb-4" style="color:#6b6b6b;">I actively use AI tools as productivity multipliers, for prompt engineering, code review, debugging, research, and workflow planning. This portfolio was planned and built with AI collaboration.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag"><i class="fas fa-robot" style="font-size:11px; margin-right:5px;"></i>Claude</span>
+              <span class="skill-tag"><i class="fas fa-comment-dots" style="font-size:11px; margin-right:5px;"></i>ChatGPT</span>
+              <span class="skill-tag"><i class="fas fa-gem" style="font-size:11px; margin-right:5px;"></i>Gemini</span>
+              <span class="skill-tag"><i class="fab fa-github" style="font-size:11px; margin-right:5px;"></i>GitHub Copilot</span>
+              <span class="skill-tag"><i class="fas fa-wand-magic-sparkles" style="font-size:11px; margin-right:5px;"></i>Prompt Engineering</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages — redesigned as a clean table-style grid -->
+        <div class="reveal">
+          <h3 class="font-mono text-xs tracking-widest mb-6" style="color:#6b6b6b; text-transform:uppercase;">Languages</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+
+            <div style="border:1px solid #e2ddd6; border-radius:14px; padding:14px 12px; text-align:center;">
+              <p class="font-medium text-sm mb-2">English</p>
+              <span style="background:#c8622a; color:white; font-size:11px; padding:3px 10px; border-radius:99px; font-family:'JetBrains Mono',monospace;">Native</span>
+            </div>
+
+            <div style="border:1px solid #e2ddd6; border-radius:14px; padding:14px 12px; text-align:center;">
+              <p class="font-medium text-sm mb-2">French</p>
+              <span style="background:rgba(200,98,42,0.12); color:#c8622a; font-size:11px; padding:3px 10px; border-radius:99px; font-family:'JetBrains Mono',monospace; border:1px solid rgba(200,98,42,0.25);">B1</span>
+            </div>
+
+            <div style="border:1px solid #e2ddd6; border-radius:14px; padding:14px 12px; text-align:center;">
+              <p class="font-medium text-sm mb-2">German</p>
+              <span style="background:rgba(200,98,42,0.12); color:#c8622a; font-size:11px; padding:3px 10px; border-radius:99px; font-family:'JetBrains Mono',monospace; border:1px solid rgba(200,98,42,0.25);">A1</span>
+            </div>
+
+            <div style="border:1px solid #e2ddd6; border-radius:14px; padding:14px 12px; text-align:center;">
+              <p class="font-medium text-sm mb-2">Hindi</p>
+              <span style="background:#f0f0ee; color:#6b6b6b; font-size:11px; padding:3px 10px; border-radius:99px; font-family:'JetBrains Mono',monospace;">Fluent</span>
+            </div>
+
+            <div style="border:1px solid #e2ddd6; border-radius:14px; padding:14px 12px; text-align:center;">
+              <p class="font-medium text-sm mb-2">Marathi</p>
+              <span style="background:#f0f0ee; color:#6b6b6b; font-size:11px; padding:3px 10px; border-radius:99px; font-family:'JetBrains Mono',monospace;">Mother Tongue</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       EDUCATION
+  ============================================================ -->
+  <section id="education" class="py-24 px-6 bg-white dark:bg-ink/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="font-mono text-accent text-xs tracking-widest uppercase mb-3">03 — Education</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+          The Xavier's<br /><em class="text-accent">journey</em>
+        </h2>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px"></div>
+
+        <div class="space-y-10">
+
+          <!-- Node 1: B.Sc. IT -->
+          <div class="reveal relative flex flex-col md:flex-row md:justify-end gap-6 md:gap-0">
+            <div class="md:w-1/2 md:pr-12">
+              <div class="edu-card rounded-3xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all cursor-pointer" onclick="toggleEdu(this)">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <img src="assets/images/sxc.jpg" alt="SXC" class="w-10 h-10 rounded-xl object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                      <!--<i class="fas fa-university text-accent hidden"></i>-->
+                    </div>
+                    <div>
+                      <p class="font-semibold text-sm">St. Xavier's College (Autonomous)</p>
+                      <p class="text-xs text-muted">Mumbai</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full">2023–2026</span>
+                </div>
+                <div class="mt-4">
+                  <p class="font-display font-semibold text-lg">B.Sc. Information Technology</p>
+                  <p class="text-xs text-muted mt-1">Minor: Bachelor of Mass Media (BMM) · CGPA: 8.10</p>
+                </div>
+                <div class="edu-details hidden mt-4 pt-4 border-t border-border text-sm text-muted space-y-1">
+                  <p>Key coursework: Python, DBMS, Web & Mobile Design, Java, Data Analytics</p>
+                  <p>BMM subjects: Advertising, Social Media, Principles of Design</p>
+                  <p>Certification: German A1 Level</p>
+                </div>
+                <p class="text-xs text-accent mt-3 edu-toggle-hint">Tap to expand ↓</p>
+              </div>
+            </div>
+            <!-- Timeline dot -->
+            <div class="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-accent border-2 border-cream -translate-x-1.5 md:-translate-x-1.5"></div>
+          </div>
+
+          <!-- Node 2: Jr. College -->
+          <div class="reveal relative flex flex-col md:flex-row gap-6 md:gap-0">
+            <div class="md:w-1/2 md:pl-12 md:ml-auto">
+              <div class="edu-card rounded-3xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all cursor-pointer" onclick="toggleEdu(this)">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <img src="assets/images/jc.jpg" alt="Jr. College" class="w-10 h-10 rounded-xl object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                      <!--<i class="fas fa-school text-accent hidden"></i>-->
+                    </div>
+                    <div>
+                      <p class="font-semibold text-sm">St. Xavier's High School & Jr. College</p>
+                      <p class="text-xs text-muted">Bhandup, Mumbai</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full">2021–2023</span>
+                </div>
+                <div class="mt-4">
+                  <p class="font-display font-semibold text-lg">HSC — Science (PCMB)</p>
+                  <p class="text-xs text-muted mt-1">Physics · Chemistry · Mathematics · Biology</p>
+                </div>
+                <div class="edu-details hidden mt-4 pt-4 border-t border-border text-sm text-muted">
+                  <p>Scored highest in French in Standard XII Science. Certificate of Honour awarded.</p>
+                </div>
+                <p class="text-xs text-accent mt-3 edu-toggle-hint">Tap to expand ↓</p>
+              </div>
+            </div>
+            <div class="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-accent/60 border-2 border-cream -translate-x-1.5 md:-translate-x-1.5"></div>
+          </div>
+
+          <!-- Node 3: School -->
+          <div class="reveal relative flex flex-col md:flex-row md:justify-end gap-6 md:gap-0">
+            <div class="md:w-1/2 md:pr-12">
+              <div class="edu-card rounded-3xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all cursor-pointer" onclick="toggleEdu(this)">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <img src="assets/images/school.jpg" alt="School" class="w-10 h-10 rounded-xl object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                      <!--<i class="fas fa-graduation-cap text-accent hidden"></i>-->   
+                    </div>
+                    <div>
+                      <p class="font-semibold text-sm">St. Francis Xavier's High School</p>
+                      <p class="text-xs text-muted">Kanjurmarg, Mumbai</p>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full">–2021</span>
+                </div>
+                <div class="mt-4">
+                  <p class="font-display font-semibold text-lg">SSC — Maharashtra Board</p>
+                  <p class="text-xs text-muted mt-1">Primary & Secondary Education</p>
+                </div>
+                <div class="edu-details hidden mt-4 pt-4 border-t border-border text-sm text-muted">
+                  <p>Where the Xavier's journey began. Strong academic foundation across subjects.</p>
+                </div>
+                <p class="text-xs text-accent mt-3 edu-toggle-hint">Tap to expand ↓</p>
+              </div>
+            </div>
+            <div class="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-accent/40 border-2 border-cream -translate-x-1.5 md:-translate-x-1.5"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="reveal mt-20">
+        <h3 class="font-mono text-xs tracking-widest mb-8" style="color:#6b6b6b; text-transform:uppercase;">Achievements & Awards</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="rounded-2xl p-5 transition-all" style="border:1px solid #e2ddd6;">
+            <div class="w-8 h-8 rounded-xl flex items-center justify-center mb-3" style="background:#fef9c3;">
+              <i class="fa-solid fa-trophy" style="color:#ca8a04; font-size:14px;"></i>
+            </div>
+            <p class="font-semibold text-sm">Certificate of Honour</p>
+            <p class="text-xs mt-1" style="color:#6b6b6b;">Highest in French — HSC Science</p>
+            <p class="text-xs font-mono mt-2" style="color:#c8622a;">2023</p>
+          </div>
+          <div class="rounded-2xl p-5 transition-all" style="border:1px solid #e2ddd6;">
+            <div class="w-8 h-8 rounded-xl flex items-center justify-center mb-3" style="background:#dbeafe;">
+              <i class="fa-solid fa-certificate" style="color:#2563eb; font-size:14px;"></i>
+            </div>
+            <p class="font-semibold text-sm">German A1 Certification</p>
+            <p class="text-xs mt-1" style="color:#6b6b6b;">Basic German Communication & Grammar — Language Lab</p>
+            <p class="text-xs font-mono mt-2" style="color:#c8622a;">2024</p>
+          </div>
+          <div class="rounded-2xl p-5 transition-all" style="border:1px solid #e2ddd6;">
+            <div class="w-8 h-8 rounded-xl flex items-center justify-center mb-3" style="background:#dcfce7;">
+              <i class="fa-solid fa-star" style="color:#16a34a; font-size:14px;"></i>
+            </div>
+            <p class="font-semibold text-sm">General Scholarship</p>
+            <p class="text-xs mt-1" style="color:#6b6b6b;">Deserving Catholic Student — St. Xavier's College</p>
+            <p class="text-xs font-mono mt-2" style="color:#c8622a;">2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       EXPERIENCE
+  ============================================================ -->
+  <section id="experience" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="font-mono text-accent text-xs tracking-widest uppercase mb-3">04 — Experience</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+          Real-world<br /><em class="text-accent">exposure</em>
+        </h2>
+      </div>
+
+      <div class="reveal max-w-3xl">
+        <div class="rounded-3xl border-2 border-accent/30 bg-accent/5 p-8 relative overflow-hidden">
+          <!-- Background accent shape -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+
+          <div class="mb-6">
+            <p class="font-mono text-xs text-accent uppercase tracking-widest mb-1">April 2025 – July 2025</p>
+            <h3 class="font-display text-2xl font-bold mb-1">Development Intern</h3>
+            <p class="font-medium mb-4" style="color:#6b6b6b;">Tofu Digital · Mumbai</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-pill">Flutter</span>
+              <span class="tech-pill">Python Flask</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">Firebase</span>
+              <span class="tech-pill">Render</span>
+              <span class="tech-pill">GitHub</span>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-code text-accent text-xs"></i>
+              </div>
+              <p class="text-muted leading-relaxed">Engineered a full-stack healthcare web application connecting vendors and clients for lab services, built the frontend in Flutter and the backend with Python Flask.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-database text-accent text-xs"></i>
+              </div>
+              <p class="text-muted leading-relaxed">Managed data architecture with PostgreSQL and handled application deployment via Firebase and Render, first experience owning a production deployment pipeline.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fa-brands fa-github text-accent text-xs"></i>
+              </div>
+              <p class="text-muted leading-relaxed">Participated in code reviews using GitHub, learned iterative deployment practices and the discipline of writing code that others will read.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section id="projects" class="py-24 px-6 bg-white dark:bg-ink/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="font-mono text-accent text-xs tracking-widest uppercase mb-3">05 — Projects</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+          Things I've<br /><em class="text-accent">built</em>
+        </h2>
+      </div>
+
+      <!-- Featured project: WayPal -->
+      <div class="reveal mb-10">
+        <div class="rounded-3xl border-2 border-accent/30 p-8 bg-cream dark:bg-ink relative overflow-hidden">
+          <span class="absolute top-6 right-6 text-xs font-mono bg-accent text-white px-3 py-1 rounded-full">Featured</span>
+          <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <p class="font-mono text-xs text-accent uppercase tracking-widest mb-3">Final Year Project · Group of 3</p>
+              <h3 class="font-display text-3xl font-bold mb-3">WayPal</h3>
+              <p class="text-sm leading-relaxed mb-4" style="color:#6b6b6b;">A voice-guided indoor navigation app for visually impaired users. ESP-32 BLE beacons act as checkpoints to detect user position in real time. The Flutter app uses an audio-first interface, no visual interaction needed with Speech-to-Text and Text-to-Speech. Includes a hybrid GPS module for outdoor-to-indoor transitions. Presented at a technical exhibition.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="tech-pill">ESP-32 BLE</span>
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">IoT</span>
+                <span class="tech-pill">Arduino C++</span>
+                <span class="tech-pill">STT / TTS</span>
+                <span class="tech-pill">EMA Filter</span>
+              </div>
+              <button onclick="toggleStory(this)" class="text-sm text-accent hover:underline font-medium">
+                Read the story ↓
+              </button>
+              <div class="project-story hidden mt-4 p-4 rounded-2xl text-sm leading-relaxed" style="background:rgba(200,98,42,0.05); border:1px solid rgba(200,98,42,0.2); color:#6b6b6b;">
+                Three of us built this together. Working with physical hardware ESP-32 boards, BLE signal ranges, beacon placement on real corridors was completely different from writing code on a laptop. The hardest problem wasn't the code; it was signal noise. When we finally got the EMA filter stabilising the beacon detection and heard the app say the right direction out loud, that was the moment. Presenting the prototype at the exhibition and explaining it to people who actually understood what it meant for accessibility that's a memory that stays.
+              </div>
+            </div>
+            <div class="w-full h-48 lg:h-full min-h-48 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20">
+              <div class="text-center">
+                <i class="fas fa-map-marker-alt text-5xl text-accent/40 mb-3"></i>
+                <p class="text-xs text-muted font-mono">Indoor Navigation · IoT</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other projects grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="reveal project-card rounded-2xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/20 rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-film text-blue-500"></i>
+            </div>
+            <a href="https://github.com/mendonzajoshua" target="_blank" class="text-muted hover:text-accent transition-colors text-sm">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+          <h4 class="font-semibold mb-2">Movie Success Prediction</h4>
+          <p class="text-xs text-muted leading-relaxed mb-4">Preprocessed large datasets and built a predictive ML model for film success based on historical trends using Python and Google Colab.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tech-pill text-xs">Python</span>
+            <span class="tech-pill text-xs">Google Colab</span>
+            <span class="tech-pill text-xs">Big Data</span>
+          </div>
+          <button onclick="toggleStory(this)" class="text-xs text-accent hover:underline font-medium mt-4 block">Story ↓</button>
+          <div class="project-story hidden mt-3 p-3 rounded-xl bg-accent/5 border border-accent/20 text-xs text-muted leading-relaxed">
+            A group project for our Big Data module, the most interesting challenge was cleaning messy real-world film data before we could even start building the model. Learned more about data preprocessing than prediction itself.
+          </div>
+        </div>
+
+        <div class="reveal project-card rounded-2xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/20 rounded-xl flex items-center justify-center">
+              <i class="fa-brands fa-github text-purple-500"></i>
+            </div>
+          </div>
+          <h4 class="font-semibold mb-2">GitHub Influencer Marketing Plan</h4>
+          <p class="text-xs text-muted leading-relaxed mb-4">Strategized a digital marketing campaign for GitHub — merging technical brand awareness with mass media principles and influencer trends. BMM minor project.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tech-pill text-xs">BMM</span>
+            <span class="tech-pill text-xs">Marketing</span>
+            <span class="tech-pill text-xs">Strategy</span>
+          </div>
+          <button onclick="toggleStory(this)" class="text-xs text-accent hover:underline font-medium mt-4 block">Story ↓</button>
+          <div class="project-story hidden mt-3 p-3 rounded-xl bg-accent/5 border border-accent/20 text-xs text-muted leading-relaxed">
+            This project was the clearest proof that my IT + BMM combination is useful. I understood the GitHub product technically and could also think about how to market it. My teammates from pure BMM backgrounds had never even used GitHub.
+          </div>
+        </div>
+
+        <div class="reveal project-card rounded-2xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-network-wired text-green-500"></i>
+            </div>
+          </div>
+          <h4 class="font-semibold mb-2">Systems & Networking Labs</h4>
+          <p class="text-xs text-muted leading-relaxed mb-4">Socket-based login system, microcontroller simulations on TinkerCad, Ubuntu OS configuration on personal hardware. Practical coursework in OS, Network Security & Embedded Systems.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tech-pill text-xs">Python Sockets</span>
+            <span class="tech-pill text-xs">TinkerCad</span>
+            <span class="tech-pill text-xs">Ubuntu</span>
+            <span class="tech-pill text-xs">C++</span>
+          </div>
+          <button onclick="toggleStory(this)" class="text-xs text-accent hover:underline font-medium mt-4 block">Story ↓</button>
+          <div class="project-story hidden mt-3 p-3 rounded-xl bg-accent/5 border border-accent/20 text-xs text-muted leading-relaxed">
+            The professor for this module made theory feel alive by making everything practical. Installing Ubuntu on my own PC for the first time, getting it to dual-boot. That was the moment I stopped being afraid of operating systems.
+          </div>
+        </div>
+
+        <div class="reveal project-card rounded-2xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all md:col-span-2 lg:col-span-1">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900/20 rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-globe text-orange-500"></i>
+            </div>
+            <a href="https://mendonzajoshua.github.io/Portfolio" target="_blank" class="text-muted hover:text-accent transition-colors text-sm">
+              <i class="fa-solid fa-external-link-alt"></i>
+            </a>
+          </div>
+          <h4 class="font-semibold mb-2">Folio.jm — This Portfolio</h4>
+          <p class="text-xs text-muted leading-relaxed mb-4">Designed and built from scratch as a real project, single-page, responsive, with GitHub API integration and AI-assisted planning. The portfolio is itself the proof of work.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="tech-pill text-xs">HTML5</span>
+            <span class="tech-pill text-xs">Tailwind CSS</span>
+            <span class="tech-pill text-xs">Vanilla JS</span>
+            <span class="tech-pill text-xs">GitHub API</span>
+            <span class="tech-pill text-xs">Claude AI</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- GitHub repos live section -->
+      <div class="reveal mt-16">
+        <h3 class="font-mono text-xs text-muted uppercase tracking-widest mb-6">GitHub Repositories</h3>
+        <div id="github-repos" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Populated by JS -->
+          <div class="repo-skeleton rounded-2xl border border-border p-5 animate-pulse">
+            <div class="h-3 bg-border rounded w-3/4 mb-3"></div>
+            <div class="h-2 bg-border rounded w-full mb-2"></div>
+            <div class="h-2 bg-border rounded w-2/3"></div>
+          </div>
+          <div class="repo-skeleton rounded-2xl border border-border p-5 animate-pulse">
+            <div class="h-3 bg-border rounded w-1/2 mb-3"></div>
+            <div class="h-2 bg-border rounded w-full mb-2"></div>
+            <div class="h-2 bg-border rounded w-3/4"></div>
+          </div>
+          <div class="repo-skeleton rounded-2xl border border-border p-5 animate-pulse">
+            <div class="h-3 bg-border rounded w-2/3 mb-3"></div>
+            <div class="h-2 bg-border rounded w-full mb-2"></div>
+            <div class="h-2 bg-border rounded w-1/2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section id="contact" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="reveal mb-14">
+        <p class="font-mono text-accent text-xs tracking-widest uppercase mb-3">06 — Contact</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+          Let's<br /><em class="text-accent">connect</em>
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16">
+
+        <!-- Left: info -->
+        <div class="reveal space-y-8">
+          <p class="text-muted leading-relaxed">
+            Whether you have an opportunity, a project idea, or just want to talk tech. I'm always open. Response time is usually within 24 hours.
+          </p>
+
+          <div class="space-y-4">
+            <a href="mailto:mendonzajoshua@gmail.com"
+              class="flex items-center gap-4 p-4 rounded-2xl border border-border hover:border-accent/40 transition-all group">
+              <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent/20 transition-all">
+                <i class="fas fa-envelope text-accent"></i>
+              </div>
+              <div>
+                <p class="text-xs text-muted">Email</p>
+                <p class="text-sm font-medium">mendonzajoshua@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/mendonzajoshua" target="_blank"
+              class="flex items-center gap-4 p-4 rounded-2xl border border-border hover:border-accent/40 transition-all group">
+              <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent/20 transition-all">
+                <i class="fab fa-linkedin text-accent"></i>
+              </div>
+              <div>
+                <p class="text-xs text-muted">LinkedIn</p>
+                <p class="text-sm font-medium">linkedin.com/in/mendonzajoshua</p>
+              </div>
+            </a>
+            <a href="https://github.com/mendonzajoshua" target="_blank"
+              class="flex items-center gap-4 p-4 rounded-2xl border border-border hover:border-accent/40 transition-all group">
+              <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center group-hover:bg-accent/20 transition-all">
+                <i class="fab fa-github text-accent"></i>
+              </div>
+              <div>
+                <p class="text-xs text-muted">GitHub</p>
+                <p class="text-sm font-medium">github.com/mendonzajoshua</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="reveal">
+          <div id="formSuccess" class="hidden mb-4 p-4 rounded-2xl bg-green-50 border border-green-200 text-green-700 text-sm">
+            <i class="fas fa-check-circle mr-2"></i>Message sent successfully! I'll get back to you soon.
+          </div>
+
+          <div class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs text-muted uppercase tracking-wide mb-1.5 block">Name</label>
+                <input id="contactName" type="text" placeholder="Your name"
+                  class="w-full px-4 py-3 rounded-xl border border-border bg-cream dark:bg-ink focus:outline-none focus:border-accent text-sm transition-all" />
+                <p class="text-xs text-red-500 mt-1 hidden" id="nameError">Please enter your name</p>
+              </div>
+              <div>
+                <label class="text-xs text-muted uppercase tracking-wide mb-1.5 block">Email</label>
+                <input id="contactEmail" type="email" placeholder="your@email.com"
+                  class="w-full px-4 py-3 rounded-xl border border-border bg-cream dark:bg-ink focus:outline-none focus:border-accent text-sm transition-all" />
+                <p class="text-xs text-red-500 mt-1 hidden" id="emailError">Please enter a valid email</p>
+              </div>
+            </div>
+            <div>
+              <label class="text-xs text-muted uppercase tracking-wide mb-1.5 block">Subject</label>
+              <input id="contactSubject" type="text" placeholder="What's this about?"
+                class="w-full px-4 py-3 rounded-xl border border-border bg-cream dark:bg-ink focus:outline-none focus:border-accent text-sm transition-all" />
+            </div>
+            <div>
+              <label class="text-xs text-muted uppercase tracking-wide mb-1.5 block">Message</label>
+              <textarea id="contactMessage" rows="5" placeholder="Tell me more..."
+                class="w-full px-4 py-3 rounded-xl border border-border bg-cream dark:bg-ink focus:outline-none focus:border-accent text-sm transition-all resize-none"></textarea>
+              <p class="text-xs text-red-500 mt-1 hidden" id="messageError">Please write a message</p>
+            </div>
+            <button id="sendBtn" onclick="sendMessage()"
+              class="w-full py-3.5 bg-accent text-white font-medium rounded-xl hover:bg-accent-light transition-all flex items-center justify-center gap-2">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane text-sm"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="py-8 px-6 border-t border-border">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-muted font-mono">
+        © 2025 Joshua Elvis Mendonza · Built with intention
+      </p>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/mendonzajoshua" target="_blank" class="text-muted hover:text-accent transition-colors text-sm"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/mendonzajoshua" target="_blank" class="text-muted hover:text-accent transition-colors text-sm"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:mendonzajoshua@gmail.com" class="text-muted hover:text-accent transition-colors text-sm"><i class="fas fa-envelope"></i></a>
+      </div>
+      <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        class="text-xs text-muted hover:text-accent transition-colors flex items-center gap-1.5 font-mono">
+        Back to top <i class="fas fa-arrow-up text-xs"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
