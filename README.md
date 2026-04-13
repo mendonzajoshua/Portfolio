@@ -2,7 +2,7 @@
 
 Personal portfolio website built as a real project, not just a template.
 
-**Live:** https://mendonzajoshua.github.io/folio-jm
+**Live:** https://mendonzajoshua.github.io/Portfolio/
 
 ## Built with
 
