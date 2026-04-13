@@ -20,8 +20,8 @@
           colors: {
             cream: '#faf8f3',
             ink: '#1c1c1e',
-            accent: '#c8622a',
-            'accent-light': '#e8845a',
+            accent: '#b85c20',
+            'accent-light': '#d4733a',
             muted: '#6b6b6b',
             border: '#e2ddd6',
           },
@@ -487,7 +487,7 @@ referrerpolicy="no-referrer" />
                       <p class="text-xs text-muted">Mumbai</p>
                     </div>
                   </div>
-                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full">2023–2026</span>
+                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full" style="white-space:nowrap; flex-shrink:0;">2023–2026</span>
                 </div>
                 <div class="mt-4">
                   <p class="font-display font-semibold text-lg">B.Sc. Information Technology</p>
@@ -502,12 +502,13 @@ referrerpolicy="no-referrer" />
               </div>
             </div>
             <!-- Timeline dot -->
-            <div class="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-accent border-2 border-cream -translate-x-1.5 md:-translate-x-1.5"></div>
+             <!-- Replace all three timeline dot divs with this same line -->
+<div class="absolute left-4 md:left-1/2 top-7 w-3 h-3 rounded-full border-2 border-white" style="background:#0f766e; transform:translateX(-6px);"></div>
           </div>
 
           <!-- Node 2: Jr. College -->
           <div class="reveal relative flex flex-col md:flex-row gap-6 md:gap-0">
-            <div class="md:w-1/2 md:pl-12 md:ml-auto">
+<div class="pl-8 md:pl-12 md:w-1/2 md:ml-auto md:pl-12">
               <div class="edu-card rounded-3xl border border-border p-6 bg-cream dark:bg-ink hover:border-accent/40 transition-all cursor-pointer" onclick="toggleEdu(this)">
                 <div class="flex items-start justify-between">
                   <div class="flex items-center gap-4">
@@ -520,7 +521,7 @@ referrerpolicy="no-referrer" />
                       <p class="text-xs text-muted">Bhandup, Mumbai</p>
                     </div>
                   </div>
-                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full">2021–2023</span>
+                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full" style="white-space:nowrap; flex-shrink:0;">2021–2023</span>
                 </div>
                 <div class="mt-4">
                   <p class="font-display font-semibold text-lg">HSC — Science (PCMB)</p>
@@ -532,7 +533,7 @@ referrerpolicy="no-referrer" />
                 <p class="text-xs text-accent mt-3 edu-toggle-hint">Tap to expand ↓</p>
               </div>
             </div>
-            <div class="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-accent/60 border-2 border-cream -translate-x-1.5 md:-translate-x-1.5"></div>
+            <div class="absolute left-4 md:left-1/2 top-7 w-3 h-3 rounded-full border-2 border-white" style="background:#0f766e; transform:translateX(-6px);"></div>
           </div>
 
           <!-- Node 3: School -->
@@ -550,7 +551,7 @@ referrerpolicy="no-referrer" />
                       <p class="text-xs text-muted">Kanjurmarg, Mumbai</p>
                     </div>
                   </div>
-                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full">–2021</span>
+                  <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded-full" style="white-space:nowrap; flex-shrink:0;">–2021</span>
                 </div>
                 <div class="mt-4">
                   <p class="font-display font-semibold text-lg">SSC — Maharashtra Board</p>
@@ -562,7 +563,7 @@ referrerpolicy="no-referrer" />
                 <p class="text-xs text-accent mt-3 edu-toggle-hint">Tap to expand ↓</p>
               </div>
             </div>
-            <div class="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-accent/40 border-2 border-cream -translate-x-1.5 md:-translate-x-1.5"></div>
+            <div class="absolute left-4 md:left-1/2 top-7 w-3 h-3 rounded-full border-2 border-white" style="background:#0f766e; transform:translateX(-6px);"></div>
           </div>
 
         </div>
@@ -678,7 +679,7 @@ referrerpolicy="no-referrer" />
             <div>
               <p class="font-mono text-xs text-accent uppercase tracking-widest mb-3">Final Year Project · Group of 3</p>
               <h3 class="font-display text-3xl font-bold mb-3">WayPal</h3>
-              <p class="text-sm leading-relaxed mb-4" style="color:#6b6b6b;">A voice-guided indoor navigation app for visually impaired users. ESP-32 BLE beacons act as checkpoints to detect user position in real time. The Flutter app uses an audio-first interface, no visual interaction needed with Speech-to-Text and Text-to-Speech. Includes a hybrid GPS module for outdoor-to-indoor transitions. Presented at a technical exhibition.</p>
+              <p class="text-sm leading-relaxed mb-4" style="color:#6b6b6b;">A voice-guided indoor navigation app for visually impaired users. ESP-32 BLE beacons act as checkpoints to detect user position in real time. The Flutter app uses an audio-first interface, no visual interaction needed with Speech-to-Text and Text-to-Speech. Includes a hybrid GPS module for outdoor-to-indoor transitions. A custom 3D-printed enclosure for the beacon hardware was designed and built by our project guide, Prof. Aaron Sir. Presented at a technical exhibition.</p>
               <div class="flex flex-wrap gap-2 mb-6">
                 <span class="tech-pill">ESP-32 BLE</span>
                 <span class="tech-pill">Flutter</span>
@@ -694,12 +695,32 @@ referrerpolicy="no-referrer" />
                 Three of us built this together. Working with physical hardware ESP-32 boards, BLE signal ranges, beacon placement on real corridors was completely different from writing code on a laptop. The hardest problem wasn't the code; it was signal noise. When we finally got the EMA filter stabilising the beacon detection and heard the app say the right direction out loud, that was the moment. Presenting the prototype at the exhibition and explaining it to people who actually understood what it meant for accessibility that's a memory that stays.
               </div>
             </div>
-            <div class="w-full h-48 lg:h-full min-h-48 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20">
+            <!--<div class="w-full h-48 lg:h-full min-h-48 rounded-2xl bg-accent/10 flex items-center justify-center border border-accent/20">
               <div class="text-center">
                 <i class="fas fa-map-marker-alt text-5xl text-accent/40 mb-3"></i>
                 <p class="text-xs text-muted font-mono">Indoor Navigation · IoT</p>
               </div>
-            </div>
+            </div>-->
+            <div class="w-full rounded-2xl overflow-hidden" style="border:1px solid rgba(200,98,42,0.2);">
+  <div style="display:flex; gap:10px; overflow-x:auto; padding:12px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;">
+    <img src="assets/images/waypal-1.jpeg" alt="WayPal beacon hardware"
+      style="height:200px; width:auto; border-radius:10px; flex-shrink:0; scroll-snap-align:start; object-fit:cover;">
+    <img src="assets/images/waypal-2.1.jpeg" alt="WayPal Flutter app"
+      style="height:200px; width:auto; border-radius:10px; flex-shrink:0; scroll-snap-align:start; object-fit:cover;">
+       <img src="assets/images/waypal-2.2.jpeg" alt="WayPal Flutter app inside campus page"
+      style="height:200px; width:auto; border-radius:10px; flex-shrink:0; scroll-snap-align:start; object-fit:cover;">
+       <img src="assets/images/waypal-2.3.jpeg" alt="WayPal Navigation Page"
+      style="height:200px; width:auto; border-radius:10px; flex-shrink:0; scroll-snap-align:start; object-fit:cover;">
+       <img src="assets/images/waypal-2.4.jpeg" alt="Product Image"
+      style="height:200px; width:auto; border-radius:10px; flex-shrink:0; scroll-snap-align:start; object-fit:cover;">
+       <img src="assets/images/waypal-2.5.jpeg" alt="Product Image"
+      style="height:200px; width:auto; border-radius:10px; flex-shrink:0; scroll-snap-align:start; object-fit:cover;">
+    <img src="assets/images/waypal-3.jpeg" alt="WayPal exhibition"
+      style="height:200px; width:auto; border-radius:10px; flex-shrink:0; scroll-snap-align:start; object-fit:cover;">
+  </div>
+  <p style="text-align:center; font-size:11px; color:#6b6b6b; padding:6px 0 10px; font-family:'JetBrains Mono',monospace;">Scroll to explore →</p>
+</div>
+  </div>
           </div>
         </div>
       </div>
@@ -712,9 +733,9 @@ referrerpolicy="no-referrer" />
             <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/20 rounded-xl flex items-center justify-center">
               <i class="fa-solid fa-film text-blue-500"></i>
             </div>
-            <a href="https://github.com/mendonzajoshua" target="_blank" class="text-muted hover:text-accent transition-colors text-sm">
+            <!--<a href="https://github.com/mendonzajoshua" target="_blank" class="text-muted hover:text-accent transition-colors text-sm">
               <i class="fa-brands fa-github"></i>
-            </a>
+            </a>-->
           </div>
           <h4 class="font-semibold mb-2">Movie Success Prediction</h4>
           <p class="text-xs text-muted leading-relaxed mb-4">Preprocessed large datasets and built a predictive ML model for film success based on historical trends using Python and Google Colab.</p>
@@ -790,11 +811,11 @@ referrerpolicy="no-referrer" />
 
       </div>
 
-      <!-- GitHub repos live section -->
+      <!-- GitHub repos live section 
       <div class="reveal mt-16">
         <h3 class="font-mono text-xs text-muted uppercase tracking-widest mb-6">GitHub Repositories</h3>
         <div id="github-repos" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Populated by JS -->
+          Populated by JS 
           <div class="repo-skeleton rounded-2xl border border-border p-5 animate-pulse">
             <div class="h-3 bg-border rounded w-3/4 mb-3"></div>
             <div class="h-2 bg-border rounded w-full mb-2"></div>
@@ -811,7 +832,29 @@ referrerpolicy="no-referrer" />
             <div class="h-2 bg-border rounded w-1/2"></div>
           </div>
         </div>
-      </div>
+      </div>-->
+      <!-- GitHub repos live section -->
+<div class="reveal mt-16">
+  <h3 class="font-mono text-xs tracking-widest mb-6" style="color:#6b6b6b; text-transform:uppercase;">GitHub Repositories</h3>
+  <div id="github-repos" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="repo-skeleton rounded-2xl p-5 animate-pulse" style="border:1px solid #e2ddd6;">
+      <div class="h-3 rounded w-3/4 mb-3" style="background:#e2ddd6;"></div>
+      <div class="h-2 rounded w-full mb-2" style="background:#e2ddd6;"></div>
+      <div class="h-2 rounded w-2/3" style="background:#e2ddd6;"></div>
+    </div>
+    <div class="repo-skeleton rounded-2xl p-5 animate-pulse" style="border:1px solid #e2ddd6;">
+      <div class="h-3 rounded w-1/2 mb-3" style="background:#e2ddd6;"></div>
+      <div class="h-2 rounded w-full mb-2" style="background:#e2ddd6;"></div>
+      <div class="h-2 rounded w-3/4" style="background:#e2ddd6;"></div>
+    </div>
+    <div class="repo-skeleton rounded-2xl p-5 animate-pulse" style="border:1px solid #e2ddd6;">
+      <div class="h-3 rounded w-2/3 mb-3" style="background:#e2ddd6;"></div>
+      <div class="h-2 rounded w-full mb-2" style="background:#e2ddd6;"></div>
+      <div class="h-2 rounded w-1/2" style="background:#e2ddd6;"></div>
+    </div>
+  </div>
+</div>
+
     </div>
   </section>
 

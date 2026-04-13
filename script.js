@@ -200,9 +200,9 @@ fetchGitHubRepos();
 // CONTACT FORM — EmailJS
 // Replace the three YOUR_* strings once you set up emailjs.com
 // ============================================================
-const EJS_KEY      = 'YOUR_PUBLIC_KEY';
-const EJS_SERVICE  = 'YOUR_SERVICE_ID';
-const EJS_TEMPLATE = 'YOUR_TEMPLATE_ID';
+const EJS_KEY      = 'g6PCsTMEprHVGHC31';
+const EJS_SERVICE  = 'service_uu3l8rg';
+const EJS_TEMPLATE = 'template_flsnk0e';
 
 let emailjsReady = false;
 try {
