@@ -40,7 +40,7 @@ html.dark {
 
 /* Active nav link */
 .nav-link.active {
-  color: #0f766e;
+  color: #b85c20;
   background: rgba(200, 98, 42, 0.08);
   border-radius: 9999px;
 }
@@ -82,7 +82,7 @@ html.dark {
 #typewriter::after {
   content: '|';
   animation: blink 1s step-end infinite;
-  color: #0f766e;
+  color: #b85c20;
   margin-left: 2px;
 }
 
@@ -122,7 +122,7 @@ html.dark {
   display: inline-block;
   padding: 6px 14px;
   background: rgba(200, 98, 42, 0.08);
-  color: #0f766e;
+  color: #b85c20;
   border: 1px solid rgba(200, 98, 42, 0.2);
   border-radius: 9999px;
   font-size: 0.8125rem;
@@ -139,7 +139,7 @@ html.dark {
   display: inline-block;
   padding: 3px 10px;
   background: rgba(200, 98, 42, 0.06);
-  color: #0f766e;
+  color: #b85c20;
   border: 1px solid rgba(200, 98, 42, 0.15);
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -263,7 +263,7 @@ html.dark {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #0f766e !important;
+  border-color: #b85c20 !important;
   box-shadow: 0 0 0 3px rgba(200, 98, 42, 0.1);
 }
 
@@ -324,7 +324,7 @@ textarea:focus {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0f766e;
+  background: #b85c20;
 }
 
 /* ============================================================
