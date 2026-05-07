@@ -100,11 +100,11 @@ if (skillsSection) {
 const typewriterEl = document.getElementById('typewriter');
 if (typewriterEl) {
   const phrases = [
-    'Information Technology Student',
-    'Functional Analyst',
-    'Multidisciplinary Learner',
-    'AI-Augmented Developer',
-    "Xavier's Alumnus"
+     'Information Technology Student',
+  'Aspiring SAP Analyst',
+  'Building Real-World Projects',
+  'Exploring Web & Data Systems',
+  "Xavier's College, Mumbai"
   ];
   let phraseIndex = 0, charIndex = 0, isDeleting = false;
 

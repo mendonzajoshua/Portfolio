@@ -26,5 +26,3 @@ No build step needed. Clone and open `index.html` in any browser,
 or use VS Code Live Server for hot reload.
 
 ---
-
-_Planned and built with AI collaboration (Claude) because knowing how to work with AI tools is itself a skill._
