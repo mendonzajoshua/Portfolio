@@ -100,11 +100,11 @@ if (skillsSection) {
 const typewriterEl = document.getElementById('typewriter');
 if (typewriterEl) {
   const phrases = [
-     'Information Technology Student',
-  'Aspiring SAP Analyst',
-  'Building Real-World Projects',
-  'Exploring Web & Data Systems',
-  "Xavier's College, Mumbai"
+    'B.Sc. Information Technology Student',
+    'Exploring Web & Data Systems',
+    'Learning AI & Workflow Automation',
+    'Building Real-World Projects',
+    'St. Xavier’s College, Mumbai'
   ];
   let phraseIndex = 0, charIndex = 0, isDeleting = false;
 
